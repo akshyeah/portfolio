@@ -11,15 +11,9 @@ def index():
 
 @app.route('/<string:page_name>')
 def html_page(page_name):
-    #path = './static/assets/resume/Akshay_Resume.pdf'
     if page_name == '/static/assets/resume/Akshay_Resume.pdf':
         return send_file(page_name, as_attachment=True)
     return render_template(page_name)
-
-#@app.route('/')
-#def download_file():
-#    
-#    return send_file(path, as_attachment=True)
 
 def write_to_csv(data):
     with open('database.csv', mode = 'a', newline='') as database:
